@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Pagina non trovata</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Font personalizzato */
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('font.ttf') format('truetype');
+        }
+
+        body {
+            background: #000000;
+            color: white;
+            font-family: 'CustomFont', Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Modifica per allineare il contenuto verticalmente */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 300px 0 0; /* Sposta tutto di 300px in basso */
+        }
+        .title {
+            margin-bottom: 20px; /* Spaziatura sotto il titolo */
+            font-size: 7rem;
+            text-align: center;
+        }
+        .content {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #animated {
+            font-size: 1.6rem; /* Rimpicciolisce il testo animato */
+        }
+        h1 {
+            font-size: 3.3rem; /* Ingrandisce la scritta "Sweetie, are you lost?" */
+            font-weight: bold;
+        }
+        .gray {
+            color: rgb(170, 170, 170); /* Definisce il colore in RGB */
+        }
+        .white {
+            color: white;
+        }
+        img {
+            max-width: 50%;
+            height: auto;
+            margin-top: 20px;
+            transition: transform 0.2s ease-in-out; /* Transizione per l'ingrandimento */
+        }
+        img:hover {
+            transform: scale(1.1); /* Ingrandisce l'immagine del 10% al passaggio del mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">404</h2> <!-- Aggiungi questo per il titolo sopra tutto -->
+        <div class="content">
+            <h1 class="mb-4"><span class="gray">Sweetie,</span> <span class="white">are you lost?</span></h1>
+            <h3><span id="animated"></span></h3>
+            <a href="video.html" id="link"> <!-- Link alla pagina che contiene il video -->
+                <img src="image.png" alt="Image" onmouseover="playSound('sound.mp3')">
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script>
+        new Typed('#animated', {
+            strings: ['Ciao!', 'Bonjour!', 'Hello!', 'Zdravstvuyte!', 'Nǐn hǎo!', '¡Hola!', 'Guten Tag!', 'Olá!', 'Dzień dobry!'],
+            typeSpeed: 70,
+            backSpeed: 0,
+            cursorChar: '❚',
+            smartBackspace: true,
+            fadeOut: true,
+            loop: true
+        });
+
+        function playSound(soundFile) {
+            var audio = new Audio(soundFile);
+            audio.play();
+        }
+    </script>
+</body>
+</html>
